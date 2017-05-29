@@ -8,12 +8,15 @@ public class OddEvenLinkedList_328 {
         ListNode(int x) { val = x; }
     }
     public ListNode oddEvenList(ListNode head) {
-        ListNode evenList, oddList, curr;
-        curr= head.next;
-        odd = head;
-        evenList = head.next;
-        while (curr!=null) {
-
+        if (head == null) return null;
+        ListNode odd = head, even = head.next, evenHead = even;
+        while (even != null && even.next != null) {
+            odd.next = even.next;
+            odd = odd.next;
+            even.next = odd.next;
+            even = even.next;
         }
+        odd.next = evenHead;
+        return head;
     }
 }
