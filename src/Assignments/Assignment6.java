@@ -16,7 +16,7 @@ public class Assignment6 {
         return nums[start];
     }
 
-    //Q2
+    //Q2 Doesn't
     public int searchInArray(int[] nums, int target) {
         if (nums.length == 0) return -1;
         if (nums.length == 1) return  nums[0] == target ? 0 : -1;
